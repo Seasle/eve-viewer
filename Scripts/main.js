@@ -1,3 +1,4 @@
+let backdrop = document.querySelector('[data-id="backdrop"]');
 let notifier = document.querySelector('.notifier');
 
 let baseUrl = 'https://esi.evetech.net/dev';
@@ -113,6 +114,8 @@ async function searchUser(username) {
 	} else {
 		updateView('character', null, `Персонаж ${username} не найден`);
 	}
+
+	backdrop.innerText = '';
 }
 
 function bindHandlers() {
@@ -192,6 +195,7 @@ function resetView() {
 			field.innerText = '';
 		}
 	}
+	backdrop.innerText = 'Загрузка данных';
 }
 
 function init() {
