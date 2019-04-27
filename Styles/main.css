@@ -25,7 +25,10 @@ body {
 	padding: 16px;
 	flex: 1 1 auto;
 	font-weight: 400;
+	white-space: nowrap;
 	color: #fff;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .container__content {
@@ -66,12 +69,14 @@ body {
 
 .container__field,
 .container__value {
+	width: 50%;
 	margin: 0;
 	padding: 16px;
+	box-sizing: border-box;
 }
 
 .container__field {
-	min-width: 192px;
+	max-width: 256px;
 	border-right: 1px solid rgba(0, 0, 0, 0.4);
 }
 
@@ -83,11 +88,13 @@ body {
 
 .container__copy {
 	position: absolute;
+	top: 0;
 	right: 0;
+	bottom: 0;
 	padding: 16px;
 	border: none;
 	font: 16px 'Roboto', 'Segoe UI', Arial, sans-serif;
-	background: #fff;
+	background: #eee;
 	opacity: 0;
 	visibility: hidden;
 	transition: background var(--duration) ease-in-out, opacity var(--duration) ease-in-out, visibility var(--duration) ease-in-out;
@@ -95,7 +102,7 @@ body {
 }
 
 .container__copy:hover {
-	background: rgba(0, 0, 0, 0.125);
+	background: #dfdfdf;
 }
 
 .container__input {
