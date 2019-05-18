@@ -126,7 +126,7 @@ function bindHandlers() {
 	searchInput.addEventListener('keypress', event => {
 		if (searchInput.value && event.which === 13) {
 			resetView();
-			searchUser(searchInput.value);
+			searchUser(searchInput.value.trim());
 			searchInput.value = '';
 		}
 	});
@@ -134,7 +134,7 @@ function bindHandlers() {
 	searchButton.addEventListener('click', event => {
 		if (searchInput.value) {
 			resetView();
-			searchUser(searchInput.value);
+			searchUser(searchInput.value.trim());
 			searchInput.value = '';
 		}
 	});
