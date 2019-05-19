@@ -111,8 +111,11 @@ async function searchUser(username) {
 
 		updateView('character', data);
 		searchCorporation(characterData.corporation_id);
+
+		location.hash = username;
 	} else {
 		updateView('character', null, `Персонаж ${username} не найден`);
+		location.hash = '';
 	}
 
 	backdrop.innerText = '';
@@ -200,6 +203,12 @@ function resetView() {
 
 function init() {
 	bindHandlers();
+
+	let username = location.hash.slice(1);
+	if (username) {
+		resetView();
+		searchUser(username);
+	}
 }
 
 window.addEventListener('load', init);
