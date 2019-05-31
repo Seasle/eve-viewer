@@ -204,7 +204,7 @@ function resetView() {
 function init() {
 	bindHandlers();
 
-	let username = location.hash.slice(1);
+	let username = decodeURIComponent(location.hash.slice(1));
 	if (username) {
 		resetView();
 		searchUser(username);
